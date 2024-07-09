@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./音乐播放器.css">
+    <title>音乐播放器</title>
+</head>
+
+<body>
+    <div draggable ='false' class="box">
+        <h2 style="text-align: left;font-size:26px;margin-left: 16px;font-style: italic;">白月光音乐</h2>
+        <input type="text"placeholder='搜索' class="searchText">
+        <div class="searchSuggest"></div>
+        <hr />
+        <br>
+        <div class="centreIco">🎵</div>
+        <div class="autoClose">定时关闭 <select class="autoClose1">
+            <option>无</option>
+            <option>5分钟之后</option>
+            <option>10分钟之后</option>
+            <option>20分钟之后</option>
+            <option>30分钟之后</option>
+            <option>60分钟之后</option>
+        </select><span class="surplusMinute"></span>分<span class="surplusSecond"></span>秒后自动关闭</div>
+        <br>
+        <div class="titleWrap"><span id="title">选择你需要播放的音乐文件吧</span></div>
+        <audio id="audio" controls src="" preload>浏览器不支持</audio>
+        <div>
+            <input type="button" value="上一首" id="last" onclick="lastMusic()">
+            <button id="toggleBtn" onclick="toggleMusic()">暂停</button>
+            <input type="button" value="下一首" id="next" onclick="nextMusic()">
+        </div>
+        <hr />
+        <input type="file" webkitdirectory id="files" accept=".MP3,.ape,.wav,.mp4" multiple="multiple">
+        <button class="returnRecent">当前音乐</button>
+        <select class="playMethod">
+            <option>随机播放</option>
+            <option>顺序播放</option>
+            <option>单曲循环</option>
+        </select>
+        <div class="allMusic">
+            <div class="gotoTop">↑</div>
+            <div class="gotoBottom">↓</div>
+        </div>
+        <div class="buzhichiMSG">此音频文件格式不支持</div>
+    </div>
+    <script src="./音乐播放器.js"></script>
+</body>
+</html>

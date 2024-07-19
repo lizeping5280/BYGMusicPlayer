@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h2 {
+    padding-top: 14px;
+    color: rgb(255, 255, 255);
+    text-shadow:0px 0px 1px#3200c7;/*设置文字阴影，第一个为参数为x方向偏移，第二个为Y的偏移，第三个值越大越模糊 */
+    letter-spacing: 3px;
+}
+
+#files{
+    text-shadow:0px 0px 1px#3200c7; 
+    color: #ffffff;
+}
+
+.searchText {
+    border: none;
+    box-sizing: border-box;
+    padding: .4rem;
+    border-radius: 1rem;
+    background: #e8e8e8;
+    box-shadow: 20px 20px 60px #c5c5c5,
+        -20px -20px 60px #ffffff;
+    transition: 0.3s;
+    position: absolute;
+    width: 160px;
+    height: 35px;
+    top: 9px;
+    left: 326px;
+}
+
+.searchText:focus {
+    outline-color: #e8e8e8;
+    background: #e8e8e8;
+    box-shadow: inset 20px 20px 60px #c5c5c5,
+        inset -20px -20px 60px #ffffff;
+    transition: 0.3s;
+}
+
+div {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.searchSuggest {
+    position: absolute;
+    width: 220px;
+    height: 240px;
+    right: 2px;
+    top: 50;
+    background-color: #fff;
+    border: solid 1px rgb(255, 159, 175);
+    border-radius: 10px;
+    display: none;
+    overflow: auto auto;
+    z-index: 1;
+}
+
+.centreIco {
+    background-image: linear-gradient(90deg,#ffffff,#04ffd5,#ffffff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 50px;
+    text-align: center;
+    line-height: 100px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: 100% auto;
+    animation: pulse512 linear 8s infinite;/* background-image: linear-gradient(30deg, rgb(33, 217, 174), rgb(14, 244, 26)); */
+    animation-play-state: paused;/*设置动画状态为' 暂停 '*/
+}
+
+.autoClose{
+    position: absolute;
+    top:51px ;
+    left:16px;
+    color: rgb(234, 235, 233);
+    font-size: 16px;
+    
+}
+.autoClose1{
+    color: hotpink;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+.autoClose1:focus{
+    outline-color: #e8e8e8;
+}
+
+.box {
+    position: relative;
+    width: 500px;
+    height: 875px;
+    margin: 2px auto;
+    border-radius: 30px;
+    border: #fff 8px solid;
+    background-image: linear-gradient(rgb(10, 249, 189), rgb(0, 174, 255));
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, .5);
+    z-index: 2;
+}
+
+audio {
+    width: 498px;
+    height: 28px;
+    margin: 8px auto 5px;
+}
+
+#last,
+#next {
+    width: 86px;
+    height: 30px;
+    border-radius: 50px;
+    border: none;
+    color: #ff3157;
+    box-shadow: 0 0.4rem #dfd9d9;
+    cursor: pointer;
+}
+
+button {
+    text-decoration: none;
+    margin: 0 16px 2px;
+    width: 90px;
+    height: 50px;
+    border-radius: 22px;
+    border: none;
+    border-bottom: rgb(6, 241, 233) solid 2px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #ffffff;
+    text-shadow: 0px 0px 2px rgb(148, 53, 243);
+    background: linear-gradient(30deg, #1657fb, #5ae5f7,#2397fc,#00f3db);
+    background-size: 300%;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, .5);
+    cursor: pointer;
+}
+
+@keyframes pulse512 {
+    0% {
+        box-shadow: 0 0 0 0 #0697b166;
+        background-size: 100% auto;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        box-shadow: 0 0 0 20px rgb(218 103 68 / 0%);
+        background-size: 200% auto;
+        transform: rotate(180deg);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+        background-size: 300% auto;
+        transform: rotate(360deg);
+    }
+}
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 #0697b166;
+        background-size: 100% auto;
+    }
+
+    70% {
+        box-shadow: 0 0 0 20px rgb(218 103 68 / 0%);
+        background-size: 200% auto;
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+        background-size: 300% auto;
+    }
+}
+.returnRecent {
+    margin-top: 0.4rem;
+    border: none;
+    width: 60px;
+    height: 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    background-size: 100% auto;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse 2.5s infinite;
+    background-image: linear-gradient(30deg, #16e4fb, #a9f5ff);    
+    border-bottom: #4d7aff 2px solid;
+}
+
+html {
+    background-color: #03a9f4;/* background-image: linear-gradient(rgb(112, 25, 254), rgb(243, 35, 170)); */
+    animation: bg-color infinite 32s;/* filter: grayscale(100%);为悼念用的 */
+    filter: brightness(100%);
+    background-image: url('./img/仙境.jpeg');
+    background-size: cover;
+}
+
+@keyframes bg-color {
+    0% { background-color: #ff4366; }
+    20% { background-color: #f5f171; }
+    40% { background-color: #19dcb5; }   
+    60% { background-color: #3bb7ff; } 
+    80% { background-color: #a927ff; } 
+    100% { background-color: #ff4366; }
+}
+
+#title {
+    font-weight: 700;
+    font-size: 20px;
+    /* background-image: linear-gradient(90deg,#da6464,#ed0cd7 33%,#2389fd); color: transparent;*/
+    background-image: linear-gradient(90deg,#ffffff,#ffffff,#ffffff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    
+    display: inline-block;
+    animation: 17s div linear infinite normal;
+    white-space: nowrap;
+}
+.titleWrap{
+    width: 420px;;
+    overflow: hidden;
+    }
+
+@keyframes div {
+    0% {
+    transform: translateX(-370px);
+    /* -webkit-transform: translateX(-220%); */
+    }
+    
+    100% {
+    transform: translateX(370px);
+    /* -webkit-transform: translateX(220%); */
+    }
+    
+    }
+
+.allMusic {    
+    width: 480px;
+    height: 500px;
+    border: 2px solid rgb(255, 255, 254);
+    overflow: auto auto;
+    border-radius: 10px;
+    background-color: rgb(122, 207, 186);
+}
+
+.allMusic::-webkit-scrollbar {
+    width: 8px;
+}
+
+.allMusic::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #ffffff;
+    background-clip: padding-box;
+    min-height: 28px;
+}
+.allMusic::-webkit-scrollbar-track-piece {
+    background-color: #707070;
+    border-radius: 10px;
+}
+.allMusic .gotoBottom,
+.allMusic .gotoTop {
+    cursor: pointer;
+}
+.allMusic li {
+    height: 2vh;
+    padding: 2vh;
+    color: rgb(255, 255, 255);
+    border-bottom: 5px solid rgb(215, 215, 215);
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.allMusic li:hover {
+    background-color: rgb(162, 162, 162);
+}
+.searchSuggest li {
+    border-bottom: 3px solid rgb(238, 223, 223);
+    padding: .5vh;
+    color: rgb(255, 159, 175);
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+.searchSuggest li:hover {
+    background-color: rgb(134, 225, 255);
+}
+
+.gotoTop {
+    position: fixed;
+    bottom: 220px;
+    left: 470px;
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    background-color: #fff;
+    font-size: 20px;
+    display: none;
+    color: #ffc800;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, .5);
+}
+
+.gotoBottom {
+    position: fixed;
+    bottom: 220px;
+    right: 470px;
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    background-color: #fff;
+    font-size: 20px;
+    color: #ffc800;
+    display: block;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, .5);
+}
+
+.playMethod {
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+    width: 80px;
+    height: 30px;
+    color: blueviolet;
+    border-radius: .5rem;
+    border-bottom: 2px solid blueviolet;
+    border-right: 2px solid blueviolet;
+    cursor: pointer;
+}
+.playMethod:focus{
+     outline-color: #e8e8e8;/*设置选中当前对象所产生的外轮廓颜色 */
+}
+
+.buzhichiMSG {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50px;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    background-color: #bcb9b9;
+    padding: 10px;
+    z-index: 3;
+    opacity: 0;
+    transition: .8s opacity;
+}
